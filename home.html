@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    :root {
+        --custom-orange: #DCB455;
+        --custom-red: #B23D2B;
+        font-family: 'Georgia', serif;
+    }
+
+    @layer base {
+        .socials {
+            color: var(--custom-orange);
+            @apply text-xs;
+        }
+        .section-spacing-container { /* used solely to space out each of the blue boxes on the left half of the screen */
+          @apply
+            flex-grow flex
+            h-1/3 /* force each blue box to take up a third of their parent container's height */
+            pb-10 /* creates a minimum vertical padding between blue boxes */
+          ;
+        }
+        .section-box { /* Defines the blue-bordered boxes */
+            border: 2px solid #427FB6; /* Blue border */
+            @apply 
+              w-full /* expand each section box to fit the full width */
+              min-h-fit /* prevents blue boxes from clipping into their text content when the screen height is too small */
+              max-h-fit /* without this the blue box borders would expand vertically to fully fill their third of the screen. We want the vertical space between the blue boxes to flex instead */ 
+              min-w-fit /* prevents blue boxes from clipping into their text content when the screen width is too small */ 
+              flex
+              flex-col
+              justify-evenly /* each row of text content in the blue boxes should be evenly spaced vertically within the box */
+              space-y-2 /* vertical space between each row of content in the blue boxes */
+              p-3 /* padding between the blue border lines and the contents of the box */
+            ;
+        }
+        .section-title {
+            @apply text-xl text-[--custom-red];
+        }
+        .section-content {
+            line-height: 1.4;
+            @apply text-xs;
+        }
+        .section-content a { /* hyperlinks within the blue boxes */
+            text-decoration: underline;
+        }
+        .right img {
+          transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
+          @apply
+            object-scale-down /* display image at its original size but scale it down to fit its container if necessary */
+            max-h-24 /* max height allows images to shrink but prevents them from growing too large */
+            align-middle
+          ;
+        }
+        .images-row {
+          @apply
+            flex-grow flex 
+            h-1/5 /* each row takes a fifth of the screen height */
+            flex-row
+            justify-evenly /* evenly space the images horizontally within the row */
+            min-w-min /* prevent images from clipping into each other when the screen width is too small */
+            min-h-min
+          ;
+        }
+        .image-container {
+          @apply w-20 ml-2 mr-2 flex items-center justify-center;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="flex h-screen">
+    <!-- Left Half -->
+    <div class="flex flex-col w-1/2 border-r-2 border-black p-[25px] min-h-fit min-w-min">
+      <!-- Left-row-1 should be the same height and y coordinate as right-row-1 -->
+      <div class="flex-grow h-1/5 flex items-center justify-between min-h-fit">
+        <!-- "Trace" + socials. Left-justified -->
+        <div class="">
+            <h1 class="text-5xl">Trace</h1>
+            <span class="socials">
+                <a href="mailto:nick@standardcrypto.vc" target="_blank">Contact</a> | 
+                <a href="https://x.com/tracecrypto1" target="_blank">X</a> | 
+                <a href="https://www.linkedin.com/in/nick-matthew/" target="_blank">LinkedIn</a>
+            </span>
+        </div>
+        <!-- Day counter + location. This container itself is right-justified, but the text within is left-justified -->
+        <div class="flex w-1/5 min-w-[80px]">
+            <div>
+                <p class="text-[--custom-orange] text-xs">New York, New York</p>
+                <p class="text-[--custom-orange] text-xs">Day <span id="dynamic-day"></span></p>
+            </div>
+        </div>
+      </div>
+      <div class="container h-4/5 min-h-fit min-w-min">
+        <!-- These remaining 3 rows all the same height, and should end at the same bottom point as the final right row -->
+        <!-- Row 2 -->
+        <div class="section-spacing-container">
+            <div class="section-box">
+                <h2 class="section-title">About</h2>
+                <p class="section-content">I’m an investor at Standard Crypto. Previously, I invested at Figment Capital and studied math and machine learning at UNC.</p>
+                <p class="section-content">A disproportionate amount of my time is currently spent on crypto, AI, and the arts, though I think of myself as an (aspiring) hypergeneralist.</p>
+            </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="section-spacing-container">
+            <div class="section-box">
+                <h2 class="section-title">Writing</h2>
+                <p class="section-content">I write, albeit less frequently and diligently than I should. Here is a sample:</p>
+                <div class="section-content pt-[10px]" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 10px;">
+                    <span><a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/k_tqpR5LX24ryq5B4CMWOI1j1QCxzsjvbQPIZBst3ps" style="color: #000;" target="_blank">Changeability</a></span>
+                    <span><a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/LIiENMjaMaf7fcFUWYCI3opjXLEZT5pOFmrkW08OPjY" style="color: #000;" target="_blank">Race to the Pareto Frontier</a></span>
+                    <span><a href="https://tracecrypto1.substack.com/p/the-formula-for-success" style="color: #000;" target="_blank">The Formula for Success</a></span>
+                    <span><a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/PAeEZ4crS54okOUNtgF5yDl9Dgh8NsvHoe4z8jtfKPs" style="color: #000;" target="_blank">Storm on the Sea of Galilee</a></span>
+                    <span><a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/F0QPw_jamtYMoh2UC3R-hhgxc2WKw-ZLlCMFljB2jK0" style="color: #000;" target="_blank">Superlearning</a></span>
+                    <span><a href="https://tracecrypto1.substack.com/p/epistemic-shocks" style="color: #000;" target="_blank">Epistemic Shocks</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="section-spacing-container">
+            <div class="section-box">
+                <h2 class="section-title">Lists</h2>
+                <div class="section-content" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, auto); gap: 10px;">
+                  <span><a href="#" style="color: #000;">Books</a></span>
+                  <span><a href="#" style="color: #000;">Comedy</a></span>
+                  <span><a href="#" style="color: #000;">Contemporaries</a></span>
+                  <span><a href="#" style="color: #000;">Organizations</a></span>
+                  <span><a href="#" style="color: #000;">Music</a></span>
+                  <span><a href="#" style="color: #000;">Brands</a></span>
+                  <span><a href="#" style="color: #000;">Historical People</a></span>
+                  <span><a href="#" style="color: #000;">Podcasts</a></span>
+                  <span><a href="#" style="color: #000;">Paintings</a></span>
+                  <span><a href="#" style="color: #000;">Places</a></span>
+                  <span><a href="#" style="color: #000;">Blogs</a></span>
+                  <span><a href="#" style="color: #000;">Films</a></span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Half -->
+    <div class="right flex flex-col w-1/2 p-[15px] min-w-fit">
+      <!-- Row 1 -->
+      <div class="images-row">
+        <div class="image-container">
+          <a href="https://www.goodreads.com/book/show/7946645" target="_blank"><img src="images/novum_organum.jpg" alt="Novum Organum"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.goodreads.com/book/show/86524.The_Path_to_Power" target="_blank"><img src="images/path_to_power.jpg" alt="Path to Power"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being" target="_blank"><img src="images/lightness_of_being.jpg" alt="Lightness of Being"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.goodreads.com/book/show/13470.Think_on_These_Things" target="_blank"><img src="images/think_on_these_things.jpg" alt="Think on These Things"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.goodreads.com/book/show/679913.Persecution_and_the_Art_of_Writing" target="_blank"><img src="images/art_of_writing.jpg" alt="Art of Writing"></a>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="images-row">
+        <div class="image-container">
+          <a href="https://podcasts.apple.com/us/podcast/the-peter-attia-drive/id1400828889" target="_blank"><img src="images/drive_podcast.jpg" alt="Drive Podcast"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://podcasts.apple.com/us/podcast/undertone/id1693303954" target="_blank"><img src="images/undertone_podcast.jpeg" alt="Undertone Podcast"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://podcasts.apple.com/us/podcast/stuff-you-should-know/id278981407" target="_blank"><img src="images/stuff_you_should_know.webp" alt="Stuff You Should Know"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.com/Pioneer-Podcast/dp/B08JJRYW8Y" target="_blank"><img src="images/pioneer_podcast.jpg" alt="Pioneer Podcast"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://podcasts.apple.com/us/podcast/astral-codex-ten-podcast/id1295289140" target="_blank"><img src="images/ssc_podcast.png" alt="SSC Podcast"></a>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="images-row">
+        <div class="image-container">
+          <a href="https://artsandculture.google.com/asset/sukiya-riverbank-in-the-eastern-capital-tto-sukiya-kaigan/jgHXtuQhMjF3PA" target="_blank"><img src="images/hiroshige.webp" alt="Hiroshige"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://artsandculture.google.com/asset/christ-in-the-storm-on-the-sea-of-galilee-rembrandt-van-rijn/HAFJC4JVXYbUBg" target="_blank"><img src="images/storm_rembrandt.jpg" alt="Storm Rembrandt"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.wikiart.org/en/hilma-af-klint/the-swan-no-17-1915-0" target="_blank"><img src="images/swan_17.jpg" alt="Swan 17"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://artsandculture.google.com/asset/quinces-lemons-pears-and-grapes-vincent-van-gogh/LwFDYT7ka4VUYg" target="_blank"><img src="images/lemons_pears.jpg" alt="Lemons and Pears"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://artsandculture.google.com/asset/ornamental-panel-%E2%80%9Cmount-fuji%E2%80%9D-kawamoto-masukichi/jgFk-2nkvvnpyg" target="_blank"><img src="images/mount_fuji.jpeg" alt="Mount Fuji"></a>
+        </div>
+      </div>
+      
+      <!-- Row 4 -->
+      <div class="images-row">
+        <div class="image-container">
+          <a href="https://open.spotify.com/album/5kBtLULy6vMwjFRSSEEIjP" target="_blank"><img src="images/goldberg.jpg" alt="Goldberg"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://open.spotify.com/album/33ZqJmmqFE8Z7Ak1Lxbnfb" target="_blank"><img src="images/1975.png" alt="1975"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://open.spotify.com/album/1KKZmSuZgEM2rd0WYy2z7j" target="_blank"><img src="images/the_cure.webp" alt="The Cure"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://open.spotify.com/album/1WBZyULtlANBKed7Zf9cDP" target="_blank"><img src="images/tupac.jpg" alt="Tupac"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://open.spotify.com/album/10WzRaNWnFUQNrW2FpqQSQ" target="_blank"><img src="images/salvia.jpg" alt="Salvia"></a>
+        </div>
+      </div>
+      
+      <!-- Row 5 -->
+      <div class="images-row">
+        <div class="image-container">
+          <a href="https://letterboxd.com/film/mr-smith-goes-to-washington/" target="_blank"><img src="images/mr_smith.jpg" alt="Mr. Smith"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://letterboxd.com/film/1917/" target="_blank"><img src="images/1917.jpg" alt="1917"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://letterboxd.com/film/amelie/" target="_blank"><img src="images/amelie.jpg" alt="Amelie"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://letterboxd.com/film/life-of-brian/" target="_blank"><img src="images/brian.jpg" alt="Brian"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://letterboxd.com/film/eternal-sunshine-of-the-spotless-mind/" target="_blank"><img src="images/spotless_mind.jpg" alt="Spotless Mind"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function updateDayCount() {
+        const startDate = new Date(2000, 8, 6); // September 6, 2000
+        const currentDate = new Date();
+        const timeDiff = currentDate - startDate;
+        const daysPassed = timeDiff / (1000 * 60 * 60 * 24);
+        document.getElementById('dynamic-day').textContent = daysPassed.toLocaleString(undefined, { minimumFractionDigits: 8, maximumFractionDigits: 8 });
+    }
+    setInterval(updateDayCount, 100); // Update every 100ms
+    updateDayCount();
+  </script>
+</body>
+</html>
