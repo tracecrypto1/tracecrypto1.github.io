@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing | Nick Matthew</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --custom-orange: #dcb455;
+        --custom-red: #b23d2b;
+        font-family: "Georgia", serif;
+      }
+
+      @layer base {
+        .socials {
+          color: var(--custom-orange);
+          @apply text-xs;
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+        .article-item {
+          @apply mb-4;
+        }
+        .article-title {
+          @apply font-medium hover:text-[--custom-orange] transition-colors cursor-pointer;
+        }
+        .article-date {
+          @apply text-gray-500 text-sm ml-2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <div class="flex flex-col w-full p-[25px] min-h-fit">
+        <div class="flex-grow flex items-start justify-between min-h-fit">
+          <div class="">
+            <!-- Main Content Area -->
+            <div id="main-content">
+              <!-- Writing header and Back to Home link -->
+              <div id="page-header">
+                <h2 class="text-3xl mb-6">Writing</h2>
+                
+                <!-- Back to Home link -->
+                <div class="mb-8">
+                  <a href="index.html" class="text-[--custom-orange] hover:underline">&larr; Back to Home</a>
+                </div>
+              </div>
+              
+              <!-- Articles List -->
+              <div id="articles-container" class="articles-list">
+                <ul>
+                  <li class="article-item">
+                    <span class="article-title">Discernment at the tail</span>
+                    <span class="article-date">Day 8,951</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/k_tqpR5LX24ryq5B4CMWOI1j1QCxzsjvbQPIZBst3ps" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Changeability</span>
+                    </a>
+                    <span class="article-date">Day 8,870</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/X8iS26bSEf5JS_So0VhNlS2VcVZMZSX0UbqhXdBz3NI" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Time-to-knowledge</span>
+                    </a>
+                    <span class="article-date">Day 8,860</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/F0QPw_jamtYMoh2UC3R-hhgxc2WKw-ZLlCMFljB2jK0" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Superlearning</span>
+                    </a>
+                    <span class="article-date">Day 8,854</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/PAeEZ4crS54okOUNtgF5yDl9Dgh8NsvHoe4z8jtfKPs" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Storm on the Sea of Galilee</span>
+                    </a>
+                    <span class="article-date">Day 8,852</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/h2uybMsfC7auakvJjyCz4g73UW5BAwhtsGoDk6ZiydI" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">The Beam in God's Eye</span>
+                    </a>
+                    <span class="article-date">Day 8,606</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://mirror.xyz/0x9977555E8919C06bBC48db8F3bA58399bCF04c39/LIiENMjaMaf7fcFUWYCI3opjXLEZT5pOFmrkW08OPjY" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Race to the Pareto Frontier</span>
+                    </a>
+                    <span class="article-date">Day 8,555</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://tracecrypto1.substack.com/p/moral-bandwidth" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Moral Bandwidth</span>
+                    </a>
+                    <span class="article-date">Day 8,481</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://tracecrypto1.substack.com/p/mood-affiliation-in-ai-risk" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Mood Affiliation in AI Risk</span>
+                    </a>
+                    <span class="article-date">Day 8,453</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://tracecrypto1.substack.com/p/epistemic-shocks" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">Epistemic Shocks</span>
+                    </a>
+                    <span class="article-date">Day 8,255</span>
+                  </li>
+                  <li class="article-item">
+                    <a href="https://tracecrypto1.substack.com/p/the-formula-for-success" target="_blank" rel="noopener noreferrer">
+                      <span class="article-title">The Formula for Success</span>
+                    </a>
+                    <span class="article-date">Day 8,006</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
