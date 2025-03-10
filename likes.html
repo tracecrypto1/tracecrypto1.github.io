@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lists | Nick Matthew</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --custom-orange: #dcb455;
+        --custom-red: #b23d2b;
+        font-family: "Georgia", serif;
+      }
+
+      @layer base {
+        .socials {
+          color: var(--custom-orange);
+          @apply text-xs;
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+        .category-item {
+          @apply mb-2 hover:text-[--custom-orange] transition-colors cursor-pointer;
+        }
+        .item-entry {
+          @apply mb-2;
+        }
+        .back-link {
+          @apply text-[--custom-orange] hover:underline cursor-pointer mb-6 inline-block;
+        }
+        .page-title {
+          @apply text-3xl mb-6;
+        }
+        .nav-container {
+          @apply mb-6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <div class="flex flex-col w-full p-[25px] min-h-fit">
+        <div class="flex-grow flex items-start justify-between min-h-fit">
+          <div class="">
+            <!-- Main Content Area -->
+            <div id="main-content">
+              <!-- "Lists" header and Back to Home link -->
+              <div id="page-header">
+                <h2 class="page-title">Lists</h2>
+                
+                <!-- Back to Home link -->
+                <div class="nav-container">
+                  <a href="index.html" class="back-link">&larr; Back to Home</a>
+                </div>
+              </div>
+              
+              <!-- Categories List -->
+              <div id="categories-container" class="categories-list">
+                <ul class="space-y-2">
+                  <li class="category-item" onclick="showContent('artworks-container')">Artworks</li>
+                  <li class="category-item" onclick="showContent('books-container')">Books</li>
+                  <li class="category-item" onclick="showContent('comedy-container')">Comedy</li>
+                  <li class="category-item" onclick="showContent('contemporaries-container')">Contemporaries</li>
+                  <li class="category-item" onclick="showContent('films-container')">Films</li>
+                  <li class="category-item" onclick="showContent('music-container')">Music</li>
+                  <li class="category-item" onclick="showContent('organizations-container')">Organizations</li>
+                  <li class="category-item" onclick="showContent('places-container')">Places</li>
+                  <li class="category-item" onclick="showContent('podcasts-container')">Podcasts</li>
+                  <li class="category-item" onclick="showContent('publications-container')">Publications</li>
+                </ul>
+              </div>
+              
+              <!-- Artworks List (Hidden by default) -->
+              <div id="artworks-container" class="content-list hidden">
+                <!-- Match the exact same structure as the main page -->
+                <h2 class="page-title">Artworks</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://catalog.archives.gov/id/533478" target="_blank" class="hover:text-[--custom-orange]">Announcement of the Armistice</a></li>
+                  <li class="item-entry"><a href="https://www.nga.gov/collection/art-object-page.63272.html" target="_blank" class="hover:text-[--custom-orange]">Another World</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/colossal-head-fragment-of-an-imago-clipeata-alexander-the-great-unknown/0AHH4cUdFIl1Jw" target="_blank" class="hover:text-[--custom-orange]">Colossal head fragment of Alexander the Great</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/convergence-jackson-pollock/rgFoAwFLiZvHqQ" target="_blank" class="hover:text-[--custom-orange]">Convergence</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/eternal-springtime-auguste-rodin/EwFifgEPWH8NBA" target="_blank" class="hover:text-[--custom-orange]">Eternal Springtime</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Flammarion_engraving" target="_blank" class="hover:text-[--custom-orange]">The Flammarion Engraving</a></li>
+                  <li class="item-entry"><a href="https://www.over-view.com/shop/gwangyang-steel-works#/" target="_blank" class="hover:text-[--custom-orange]">Gwangyang Steel Works</a></li>
+                  <li class="item-entry"><a href="https://www.davidsallestudio.net/plateA05.112.html" target="_blank" class="hover:text-[--custom-orange]">Helena at 5am</a></li>
+                  <li class="item-entry"><a href="https://www.nickgentry.com/the-immortal" target="_blank" class="hover:text-[--custom-orange]">The Immortal</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/kuma-mask-unknown/sgGJiLIZQb5OpQ" target="_blank" class="hover:text-[--custom-orange]">Kuma Mask</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/laser-prototype-0097/sAEDh4lXQWcdgA" target="_blank" class="hover:text-[--custom-orange]">Laser Prototype</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/lying-1-david-diao/OAFeBccFDQkX0A" target="_blank" class="hover:text-[--custom-orange]">Lying 1</a></li>
+                  <li class="item-entry"><a href="https://www.wikiart.org/en/aztec-art/maize-deity-chicomecoatl" target="_blank" class="hover:text-[--custom-orange]">Maize Deity</a></li>
+                  <li class="item-entry"><a href="https://thejewishmuseum.org/collection/1133-memorial-tablet-and-omer-calendar" target="_blank" class="hover:text-[--custom-orange]">Memorial Tablet and Omer Calendar</a></li>
+                  <li class="item-entry"><a href="https://www.meisterdrucke.uk/fine-art-prints/French-School/415135/Monster-devouring-a-human,-column-capital.html" target="_blank" class="hover:text-[--custom-orange]">Monster Devouring a Man</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/motif-from-the-story-of-a-mother-by-hans-christian-andersen-niels-hansen-jacobsen/6wHs7scuPV7TEQ" target="_blank" class="hover:text-[--custom-orange]">Motif from the Story of a Mother</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/the-mysterious-archaeologists/OQEIaS7hTcSG5w" target="_blank" class="hover:text-[--custom-orange]">The Mysterious Archaeologists</a></li>
+                  <li class="item-entry"><a href="https://www.wikiart.org/en/fernand-khnopff/my-heart-cries-for-the-past-1889" target="_blank" class="hover:text-[--custom-orange]">My Heart Cries for the Past</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/notre-dame-amrita-sher-gil/GAGZ5YLrvr2wFg" target="_blank" class="hover:text-[--custom-orange]">Notre Dame</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/portrait-of-adolfo-best-maugard/jQF-X5pR3Xdxpw" target="_blank" class="hover:text-[--custom-orange]">Portrait of Adolfo Best Maugard</a></li>
+                  <li class="item-entry"><a href="https://www.metmuseum.org/art/collection/search/313759" target="_blank" class="hover:text-[--custom-orange]">Ram Mask</a></li>
+                  <li class="item-entry"><a href="https://www.wikiart.org/en/limbourg-brothers/september" target="_blank" class="hover:text-[--custom-orange]">September</a></li>
+                  <li class="item-entry"><a href="https://artsandculture.google.com/asset/le-silence/HwHch3lVhiyq_g" target="_blank" class="hover:text-[--custom-orange]">Le Silence</a></li>
+                  <li class="item-entry"><a href="https://www.wikiart.org/en/nikolaos-gyzis/the-spider-1884" target="_blank" class="hover:text-[--custom-orange]">The Spider</a></li>
+                  <li class="item-entry"><a href="https://www.metmuseum.org/art/collection/search/210899" target="_blank" class="hover:text-[--custom-orange]">Wave Bowl</a></li>
+                </ol>
+              </div>
+              
+            <!-- Books List (Hidden by default) -->
+            <div id="books-container" class="content-list hidden">
+                <h2 class="page-title">Books</h2>
+                <div class="nav-container">
+                <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <div class="mb-4">
+                <a href="https://www.goodreads.com/user/show/37911190-nick" target="_blank" class="text-[--custom-orange] hover:underline">My Goodreads</a>
+                </div>
+                <ol class="space-y-2">
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/137979.Against_Method" target="_blank" class="hover:text-[--custom-orange]">Against Method</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/26195941-the-age-of-surveillance-capitalism" target="_blank" class="hover:text-[--custom-orange]">The Age of Surveillance Capitalism</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/10483171-the-beginning-of-infinity" target="_blank" class="hover:text-[--custom-orange]">The Beginning of Infinity</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/52357.Beowulf" target="_blank" class="hover:text-[--custom-orange]">Beowulf</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/477.The_Collapse_of_Complex_Societies" target="_blank" class="hover:text-[--custom-orange]">The Collapse of Complex Societies</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/14706.Faust_First_Part" target="_blank" class="hover:text-[--custom-orange]">Faust</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/1923820.The_Holy_Bible" target="_blank" class="hover:text-[--custom-orange]">Holy Bible</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/779424.Autobiography" target="_blank" class="hover:text-[--custom-orange]">John Stuart Mill: Autobiography</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/9216051-lolita" target="_blank" class="hover:text-[--custom-orange]">Lolita</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/43913694-macbeth" target="_blank" class="hover:text-[--custom-orange]">MacBeth</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/864824.Medieval_Technology_and_Social_Change" target="_blank" class="hover:text-[--custom-orange]">Medieval Technology and Social Change</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/100365.The_Mote_in_God_s_Eye" target="_blank" class="hover:text-[--custom-orange]">The Mote in God's Eye</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/237794.The_Persians" target="_blank" class="hover:text-[--custom-orange]">The Persians</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/46725.Plagues_and_Peoples" target="_blank" class="hover:text-[--custom-orange]">Plagues and Peoples</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/72910.The_Gift" target="_blank" class="hover:text-[--custom-orange]">Poems of Hafez</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/1111.The_Power_Broker" target="_blank" class="hover:text-[--custom-orange]">The Power Broker</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/129915654-pride-prejudice" target="_blank" class="hover:text-[--custom-orange]">Pride and Prejudice</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/327051.Reasons_and_Persons" target="_blank" class="hover:text-[--custom-orange]">Reasons and Persons</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/29580.Second_Foundation" target="_blank" class="hover:text-[--custom-orange]">Second Foundation</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/25761655-the-secret-of-our-success" target="_blank" class="hover:text-[--custom-orange]">The Secret of Our Success</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/25131230-rationality" target="_blank" class="hover:text-[--custom-orange]">The Sequences</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/13470.Think_on_These_Things" target="_blank" class="hover:text-[--custom-orange]">Think on These Things</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being" target="_blank" class="hover:text-[--custom-orange]">The Unbearable Lightness of Being</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/17716.Waiting_for_Godot" target="_blank" class="hover:text-[--custom-orange]">Waiting for Godot</a></li>
+                <li class="item-entry"><a href="https://www.goodreads.com/book/show/42036377-where-is-my-flying-car" target="_blank" class="hover:text-[--custom-orange]">Where is My Flying Car?</a></li>
+                </ol>
+            </div>
+              
+              <!-- Comedy List (Hidden by default) -->
+              <div id="comedy-container" class="content-list hidden">
+                <h2 class="page-title">Comedy</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Airplane!" target="_blank" class="hover:text-[--custom-orange]"><em>Airplane</em></a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/playlist?list=PLFEE651C298476F00" target="_blank" class="hover:text-[--custom-orange]">Between Two Ferns</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Bill_Burr" target="_blank" class="hover:text-[--custom-orange]">Bill Burr</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Borat" target="_blank" class="hover:text-[--custom-orange]"><em>Borat</em></a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=coC4t7nCGPs" target="_blank" class="hover:text-[--custom-orange]">Bring The Pain</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0264235/" target="_blank" class="hover:text-[--custom-orange]">Curb Your Enthusiasm</a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=o4mgHNX9eUg" target="_blank" class="hover:text-[--custom-orange]">Guzzler's Tonic</a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=ppVpdsClN80" target="_blank" class="hover:text-[--custom-orange]">Headmaster Kills Student</a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=PokuvW-DCmk" target="_blank" class="hover:text-[--custom-orange]">Hitchens Highlights</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt2100976/" target="_blank" class="hover:text-[--custom-orange]">Impractical Jokers</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt1981558/" target="_blank" class="hover:text-[--custom-orange]">Key & Peele</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Dave_Chappelle:_Killin%27_Them_Softly" target="_blank" class="hover:text-[--custom-orange]">Killin' Them Softly</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Mitch_Hedberg" target="_blank" class="hover:text-[--custom-orange]">Mitch Hedberg</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Moms_Mabley" target="_blank" class="hover:text-[--custom-orange]">Moms Mabley</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0071853/" target="_blank" class="hover:text-[--custom-orange]"><em>Monty Python: The Life of Brian</em></a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=5S5iZZEtTkg" target="_blank" class="hover:text-[--custom-orange]">New in Town</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Notting_Hill_(film)" target="_blank" class="hover:text-[--custom-orange]"><em>Notting Hill</em></a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=koNwUeG-iKE" target="_blank" class="hover:text-[--custom-orange]">Phobias Workshop</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Ricky_Gervais" target="_blank" class="hover:text-[--custom-orange]">Ricky Gervais</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0072562/" target="_blank" class="hover:text-[--custom-orange]">Saturday Night Live</a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/watch?v=xsT29YP3m0A" target="_blank" class="hover:text-[--custom-orange]">Terrible Auctioneer</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Theo_Von" target="_blank" class="hover:text-[--custom-orange]">Theo Von</a></li>
+                  <li class="item-entry"><a href="https://www.tiktok.com/explore" target="_blank" class="hover:text-[--custom-orange]">TikTok</a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/@tosh" target="_blank" class="hover:text-[--custom-orange]">Tosh.0</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt2919910/" target="_blank" class="hover:text-[--custom-orange]">Whose Line is It Anyways?</a></li>
+                </ol>
+              </div>
+
+                <!-- Contemporaries List (Hidden by default) -->
+                <div id="contemporaries-container" class="content-list hidden">
+                    <!-- Match the exact same structure as the main page -->
+                    <h2 class="page-title">Contemporaries</h2>
+                    <div class="nav-container">
+                        <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                    </div>
+                    <ol class="space-y-2">
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Audrey_Tang" target="_blank" class="hover:text-[--custom-orange]">Audrey Tang</a></li>
+                        <li class="item-entry"><a href="https://x.com/ByrneHobart" target="_blank" class="hover:text-[--custom-orange]">Bryne Hobart</a></li>
+                        <li class="item-entry"><a href="https://civilizationemerging.com/" target="_blank" class="hover:text-[--custom-orange]">Daniel Schmactenberger</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/David_Deutsch" target="_blank" class="hover:text-[--custom-orange]">David Deutsch</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/David_Salle" target="_blank" class="hover:text-[--custom-orange]">David Salle</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Dua_Lipa" target="_blank" class="hover:text-[--custom-orange]">Dua Lipa</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Elon_Musk" target="_blank" class="hover:text-[--custom-orange]">Elon Musk</a></li>
+                        <li class="item-entry"><a href="https://www.gleech.org/about/" target="_blank" class="hover:text-[--custom-orange]">Gavin Leech</a></li>
+                        <li class="item-entry"><a href="https://gwern.net/" target="_blank" class="hover:text-[--custom-orange]">Gwern</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Ilya_Sutskever" target="_blank" class="hover:text-[--custom-orange]">Ilya Sutskever</a></li>
+                        <li class="item-entry"><a href="https://joecarlsmith.com/" target="_blank" class="hover:text-[--custom-orange]">Joe Carlsmith</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Lana_Del_Rey" target="_blank" class="hover:text-[--custom-orange]">Lana Del Rey</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Laura_Deming" target="_blank" class="hover:text-[--custom-orange]">Laura Deming</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Patrick_Collison" target="_blank" class="hover:text-[--custom-orange]">Patrick Collison</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Peter_Fenton_(venture_capitalist)" target="_blank" class="hover:text-[--custom-orange]">Peter Fenton</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Peter_Thiel" target="_blank" class="hover:text-[--custom-orange]">Peter Thiel</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Quentin_Tarantino" target="_blank" class="hover:text-[--custom-orange]">Quentin Tarantino</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Robert_Caro" target="_blank" class="hover:text-[--custom-orange]">Robert Caro</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Robin_Hanson" target="_blank" class="hover:text-[--custom-orange]">Robin Hanson</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Sacha_Baron_Cohen" target="_blank" class="hover:text-[--custom-orange]">Sacha Baron Cohen</a></li>
+                        <li class="item-entry"><a href="https://x.com/slatestarcodex?lang=en" target="_blank" class="hover:text-[--custom-orange]">Scott Alexander</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Stanley_Druckenmiller" target="_blank" class="hover:text-[--custom-orange]">Stanley Druckenmiller</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Tyler_Cowen" target="_blank" class="hover:text-[--custom-orange]">Tyler Cowen</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Vitalik_Buterin" target="_blank" class="hover:text-[--custom-orange]">Vitalik Buterin</a></li>
+                        <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Werner_Herzog" target="_blank" class="hover:text-[--custom-orange]">Werner Herzog</a></li>
+                    </ol>
+                    </div>
+              
+              <!-- Films List (Hidden by default) -->
+              <div id="films-container" class="content-list hidden">
+                <h2 class="page-title">Films</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0088763/" target="_blank" class="hover:text-[--custom-orange]">Back to the Future</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0112471/" target="_blank" class="hover:text-[--custom-orange]">Before Sunrise</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0100234/" target="_blank" class="hover:text-[--custom-orange]">Close-Up</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0091042/" target="_blank" class="hover:text-[--custom-orange]">Ferris Bueller's Day Off</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0083946/" target="_blank" class="hover:text-[--custom-orange]">Fitzcarraldo</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt2267998/" target="_blank" class="hover:text-[--custom-orange]">Gone Girl</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt2278388/" target="_blank" class="hover:text-[--custom-orange]">Grand Budapest Hotel</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0025316/" target="_blank" class="hover:text-[--custom-orange]">It Happened One Night</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0266697/" target="_blank" class="hover:text-[--custom-orange]">Kill Bill Vol 1 & 2</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0441773/" target="_blank" class="hover:text-[--custom-orange]">Kung Fu Panda</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0076741/" target="_blank" class="hover:text-[--custom-orange]">La Soufriere</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0118799/" target="_blank" class="hover:text-[--custom-orange]">Life is Beautiful</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0019760/" target="_blank" class="hover:text-[--custom-orange]">Man with a Movie Camera</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Notting_Hill_(film)" target="_blank" class="hover:text-[--custom-orange]">Notting Hill</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt6751668/" target="_blank" class="hover:text-[--custom-orange]">Parasite</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt13238346/" target="_blank" class="hover:text-[--custom-orange]">Past Lives</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt27503384/" target="_blank" class="hover:text-[--custom-orange]">Perfect Days</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0245429/" target="_blank" class="hover:text-[--custom-orange]">Spirited Away</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt1457767/" target="_blank" class="hover:text-[--custom-orange]">The Conjuring</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0015864/" target="_blank" class="hover:text-[--custom-orange]">The Gold Rush</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0120382/" target="_blank" class="hover:text-[--custom-orange]">The Truman Show</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0046438/" target="_blank" class="hover:text-[--custom-orange]">Tokyo Story</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0093191/" target="_blank" class="hover:text-[--custom-orange]">Wings of Desire</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt5311514/" target="_blank" class="hover:text-[--custom-orange]">Your Name</a></li>
+                  <li class="item-entry"><a href="https://www.imdb.com/title/tt0245574/" target="_blank" class="hover:text-[--custom-orange]">Y Tu Mama Tambien</a></li>
+                </ol>
+              </div>
+              
+              <!-- Music List (Hidden by default) -->
+              <div id="music-container" class="content-list hidden">
+                <h2 class="page-title">Music</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://open.spotify.com/track/0ZU7dTp8rNR1Bpc0jMcEAD?si=2df46e7ca09e4cc7" target="_blank" class="hover:text-[--custom-orange]">Again</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/3LBLG1OHCS4VhNBwf8lwci?si=fe6aab148b184779" target="_blank" class="hover:text-[--custom-orange]">Anoroc</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/6Dq2LzijkY9WNPwBGDah4L?si=e3829a86eb954712" target="_blank" class="hover:text-[--custom-orange]">Didn't I</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/78MK55UVcSHXWpNuT0I1bC?si=10e4bdb806b34552" target="_blank" class="hover:text-[--custom-orange]">Equinox</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/3PG7BAJG9WkmNOJOlc4uAo?si=72dc96d539244911" target="_blank" class="hover:text-[--custom-orange]">Femme Fatale</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/05UMPy4P6nkxbHAaJba2pV?si=3238ccddc0af411b" target="_blank" class="hover:text-[--custom-orange]">Firesmoke</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/40Rpg3LkZwwzuHJ3GdjMma?si=da575c50a0e04b2f" target="_blank" class="hover:text-[--custom-orange]">Gnarly</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/0DGfclu8baokgVcqSowXzI?si=0813c3cd3f20474b" target="_blank" class="hover:text-[--custom-orange]">Heartbreak Beat</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/6fHs0oTEL87savGV1pLRmh?si=987270ca83a6473c" target="_blank" class="hover:text-[--custom-orange]">I'm So</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/3zjwqMCRfLPIvH7Pj9iYU9?si=182cb774374c4bf3" target="_blank" class="hover:text-[--custom-orange]">It's So Heavy</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/0N3W5peJUQtI4eyR6GJT5O?si=4dfc68904ac547ee" target="_blank" class="hover:text-[--custom-orange]">King Kunta</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/3X3P8wgRL2wsLoPtVFO41d?si=0db9276c795a4c38" target="_blank" class="hover:text-[--custom-orange]">Let's Straighten It Out</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/2WvsvWRHvcX3bZPiJwTwpy?si=0444824949b0463f" target="_blank" class="hover:text-[--custom-orange]">Meticulous</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/2FeDzl4Sx3u0nG9FDwCI5s?si=c78f248826ee4795" target="_blank" class="hover:text-[--custom-orange]">No Room for a Nihilist in Hollywood</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/2ntjrFwp2AvA2vHTbJrgmX?si=412769ddd9844343" target="_blank" class="hover:text-[--custom-orange]">Nánnufláy</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/11NkxJtowfjaJksJbjYAS0?si=d8059d97a1de40e5" target="_blank" class="hover:text-[--custom-orange]">Outro Lugar</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/6zCBk93V8M7fPriZj9i4dd?si=14f0709511e04627" target="_blank" class="hover:text-[--custom-orange]">Redondo Beach</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/5rQEom98vgByjAZ4kIw2kL?si=5d7abeeb9882465c" target="_blank" class="hover:text-[--custom-orange]">Road Head</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/5wIU4rRNllpmY4yO77x3KP?si=bd2d6732003541a8" target="_blank" class="hover:text-[--custom-orange]">Saye Mogo Bana</a></li>
+                  <li class="item-entry"><a href="hhttps://open.spotify.com/track/4fUKE8EULjQdHF4zb0M8FO?si=6152f7f547554545" target="_blank" class="hover:text-[--custom-orange]">Sgt. Pepper's Lonely Hearts Club Band</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/7hO6BIPeHb0Y5v9bgXoxKg" target="_blank" class="hover:text-[--custom-orange]">Sohlala Sisonke</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/4wFeMmJDlgkAxlQ07PbdGZ?si=af06a99551f24ff4" target="_blank" class="hover:text-[--custom-orange]">Sour Switchblade</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/3J2joz4SmGKKfSnCi3VsQU?si=d6cfb6bde68c48be" target="_blank" class="hover:text-[--custom-orange]">Tatono</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/7JPNvoMjoIXkTDAMx9Aajj?si=10bea439d4f54beb" target="_blank" class="hover:text-[--custom-orange]">Tezeta</a></li>
+                  <li class="item-entry"><a href="https://open.spotify.com/track/1fQzbxJs5jLKcBD1jVyGj4?si=e97413294a1e431d" target="_blank" class="hover:text-[--custom-orange]">Try</a></li>
+                </ol>
+              </div>
+
+                <!-- Organizations List (Hidden by default) -->
+                <div id="organizations-container" class="content-list hidden">
+                    <!-- Match the exact same structure as the main page -->
+                    <h2 class="page-title">Organizations</h2>
+                    <div class="nav-container">
+                    <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                    </div>
+                    <ol class="space-y-2">
+                    <li class="item-entry"><a href="https://www.asc.ox.ac.uk/" target="_blank" class="hover:text-[--custom-orange]">All Souls College</a></li>
+                    <li class="item-entry"><a href="https://www.anthropic.com/" target="_blank" class="hover:text-[--custom-orange]">Anthropic</a></li>
+                    <li class="item-entry"><a href="https://arcinstitute.org/" target="_blank" class="hover:text-[--custom-orange]">Arc Institute</a></li>
+                    <li class="item-entry"><a href="https://www.benchmark.com/" target="_blank" class="hover:text-[--custom-orange]">Benchmark</a></li>
+                    <li class="item-entry"><a href="https://www.berkshirehathaway.com/" target="_blank" class="hover:text-[--custom-orange]">Berkshire Hathaway</a></li>
+                    <li class="item-entry"><a href="https://www.blueorigin.com/" target="_blank" class="hover:text-[--custom-orange]">Blue Origin</a></li>
+                    <li class="item-entry"><a href="https://www.csisoftware.com/" target="_blank" class="hover:text-[--custom-orange]">Constellation Software</a></li>
+                    <li class="item-entry"><a href="https://www.costco.com/" target="_blank" class="hover:text-[--custom-orange]">Cosco</a></li>
+                    <li class="item-entry"><a href="https://en.wikipedia.org/wiki/G0v" target="_blank" class="hover:text-[--custom-orange]">g0v</a></li>
+                    <li class="item-entry"><a href="https://globalprioritiesinstitute.org/" target="_blank" class="hover:text-[--custom-orange]">Global Priorities Institute</a></li>
+                    <li class="item-entry"><a href="https://www.hoover.org/" target="_blank" class="hover:text-[--custom-orange]">Hoover Institution</a></li>
+                    <li class="item-entry"><a href="https://www.initc3.org/" target="_blank" class="hover:text-[--custom-orange]">IC3</a></li>
+                    <li class="item-entry"><a href="https://www.ias.edu/" target="_blank" class="hover:text-[--custom-orange]">Institute for Advanced Study</a></li>
+                    <li class="item-entry"><a href="https://www.mercatus.org/" target="_blank" class="hover:text-[--custom-orange]">Mercatus Center</a></li>
+                    <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Nishiyama_Onsen_Keiunkan" target="_blank" class="hover:text-[--custom-orange]">Nishiyama Onsen Keiunkan</a></li>
+                    <li class="item-entry"><a href="https://www.openphilanthropy.org/" target="_blank" class="hover:text-[--custom-orange]">Open Philanthropy</a></li>
+                    <li class="item-entry"><a href="https://ourworldindata.org/" target="_blank" class="hover:text-[--custom-orange]">Our World in Data</a></li>
+                    <li class="item-entry"><a href="https://qri.org/" target="_blank" class="hover:text-[--custom-orange]">Qualia Research Institute</a></li>
+                    <li class="item-entry"><a href="https://www.rentec.com/Home.action?index=true" target="_blank" class="hover:text-[--custom-orange]">Renaissance Technologies</a></li>
+                    <li class="item-entry"><a href="https://www.santafe.edu/" target="_blank" class="hover:text-[--custom-orange]">Sante Fe Institute</a></li>
+                    <li class="item-entry"><a href="https://www.spacex.com/" target="_blank" class="hover:text-[--custom-orange]">SpaceX</a></li>
+                    <li class="item-entry"><a href="https://www.sjc.edu/" target="_blank" class="hover:text-[--custom-orange]">St. John's College</a></li>
+                    <li class="item-entry"><a href="https://stripe.com/" target="_blank" class="hover:text-[--custom-orange]">Stripe</a></li>
+                    <li class="item-entry"><a href="https://thielfellowship.org/" target="_blank" class="hover:text-[--custom-orange]">Thiel Fellowship</a></li>
+                    <li class="item-entry"><a href="https://thrivecap.com/" target="_blank" class="hover:text-[--custom-orange]">Thrive Capital</a></li>
+                    </ol>
+                </div>
+
+               <!-- Places List (Hidden by default) -->
+               <div id="places-container" class="content-list hidden">
+                <!-- Match the exact same structure as the main page -->
+                <h2 class="page-title">Places</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://g.co/kgs/pUdG2vi" target="_blank" class="hover:text-[--custom-orange]">Basílica de la Sagrada Família</a></li>
+                  <li class="item-entry"><a href="https://www.nps.gov/blri/index.htm" target="_blank" class="hover:text-[--custom-orange]">Blue Ridge Parkway, North Carolina</a></li>
+                  <li class="item-entry"><a href="https://www.borgoegnazia.com/" target="_blank" class="hover:text-[--custom-orange]">Borgo Egnazia, Bari</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/g3Fzq1y" target="_blank" class="hover:text-[--custom-orange]">Burj Khalifa, Dubai</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/Ra8hU8j" target="_blank" class="hover:text-[--custom-orange]">Carowinds</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/u7mHNQd" target="_blank" class="hover:text-[--custom-orange]">Cocina Del Mar, Cabo San Lucas</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/Ax6VFqR" target="_blank" class="hover:text-[--custom-orange]">Gaggan, Bangkok</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/MuVW3cP" target="_blank" class="hover:text-[--custom-orange]">He's Not Here, Chapel Hill</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/ZCiHYeL" target="_blank" class="hover:text-[--custom-orange]">KYU YASUI, Tokyo</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/ZreQ5L3" target="_blank" class="hover:text-[--custom-orange]">La Cabra</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Lake_Geneva" target="_blank" class="hover:text-[--custom-orange]">Lake Geneva, Switzerland</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/9q9D7Kb" target="_blank" class="hover:text-[--custom-orange]">Les Nautes, Paris</a></li>
+                  <li class="item-entry"><a href="https://townoflubec.com/lubec-harbor/" target="_blank" class="hover:text-[--custom-orange]">Lubec Harbor, Maine</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/2p4c8r7" target="_blank" class="hover:text-[--custom-orange]">Luxembourg Gardens, Paris</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Marina_Bay_Sands" target="_blank" class="hover:text-[--custom-orange]">Marina Bay Sands, Singapore</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/33KaM86" target="_blank" class="hover:text-[--custom-orange]">Memorial Church, Stanford</a></li>
+                  <li class="item-entry"><a href="https://g.co/kgs/Nm1z9v9" target="_blank" class="hover:text-[--custom-orange]">Mon Ami Louis, Winnipeg</a></li>
+                  <li class="item-entry"><a href="https://moxychelsea.com/the-fleur-room-rooftop-bar-lounge/" target="_blank" class="hover:text-[--custom-orange]">The Fleur Room, New York</a></li>
+                  <li class="item-entry"><a href="https://www.metmuseum.org/" target="_blank" class="hover:text-[--custom-orange]">The Metropolitan Museum of Art, New York</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Tulum" target="_blank" class="hover:text-[--custom-orange]">Tulum Archaeological Site</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Ullevi" target="_blank" class="hover:text-[--custom-orange]">Ullevi</a></li>
+                  <li class="item-entry"><a href="https://en.wikipedia.org/wiki/Whistler_Mountain" target="_blank" class="hover:text-[--custom-orange]">Whistler Mountain, British Columbia</a></li>
+                  <li class="item-entry"><a href="https://www.gornergrat-kulm.ch/stellarium/?lang=en" target="_blank" class="hover:text-[--custom-orange]">Zermatt Observatory, Zermatt</a></li>
+                  <li class="item-entry"><a href="https://www.nps.gov/zion/index.htm" target="_blank" class="hover:text-[--custom-orange]">Zion National Park, Utah</a></li>
+                </ol>
+              </div>
+              <!-- Podcasts List (Hidden by default) -->
+              <div id="podcasts-container" class="content-list hidden">
+                <!-- Match the exact same structure as the main page -->
+                <h2 class="page-title">Podcasts</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465" target="_blank" class="hover:text-[--custom-orange]">20VC</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/80-000-hours-podcast/id1245002988" target="_blank" class="hover:text-[--custom-orange]">The 80K Podcast</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/acquired/id1050462261" target="_blank" class="hover:text-[--custom-orange]">Acquired</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/astral-codex-ten-podcast/id1295289140" target="_blank" class="hover:text-[--custom-orange]">Astral Codex Ten</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/bg2pod-with-brad-gerstner-and-bill-gurley/id1727278168" target="_blank" class="hover:text-[--custom-orange]">BG2</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/the-commercial-break/id1506436093" target="_blank" class="hover:text-[--custom-orange]">The Commercial Break</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/nz/podcast/the-common-reader/id1638677512" target="_blank" class="hover:text-[--custom-orange]">The Common Reader</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/conversations-with-tyler/id983795625" target="_blank" class="hover:text-[--custom-orange]">Conversations with Tyler</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/the-peter-attia-drive/id1400828889" target="_blank" class="hover:text-[--custom-orange]">The Drive</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/dwarkesh-podcast/id1603247791" target="_blank" class="hover:text-[--custom-orange]">Dwarkesh Podcast</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/econtalk/id135066958" target="_blank" class="hover:text-[--custom-orange]">EconTalk</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/gb/podcast/hear-this-idea/id1496501781" target="_blank" class="hover:text-[--custom-orange]">Hear This Idea</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/honestly-with-bari-weiss/id1570872415" target="_blank" class="hover:text-[--custom-orange]">Honestly</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/invest-like-the-best-with-patrick-oshaughnessy/id1154105909" target="_blank" class="hover:text-[--custom-orange]">Invest Like The Best</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/the-logan-bartlett-show/id1606770839" target="_blank" class="hover:text-[--custom-orange]">The Logan Bartlett Show</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/manifold/id1450540825" target="_blank" class="hover:text-[--custom-orange]">Manifold</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/the-marginal-revolution-podcast/id1769803965"target="_blank" class="hover:text-[--custom-orange]">Marginal Revolution</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688" target="_blank" class="hover:text-[--custom-orange]">No Priors</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/odd-lots/id1056200096" target="_blank" class="hover:text-[--custom-orange]">Odd Lots</a></li>
+                  <li class="item-entry"><a href="https://www.youtube.com/@service95/videos" target="_blank" class="hover:text-[--custom-orange]">Service95</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/stuff-you-should-know/id278981407" target="_blank" class="hover:text-[--custom-orange]">Stuff You Should Know</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/uncommon-knowledge/id1378389941" target="_blank" class="hover:text-[--custom-orange]">Uncommon Knowledge</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/undertone/id1693303954" target="_blank" class="hover:text-[--custom-orange]">Undertone</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/the-video-archives-podcast-with-quentin-tarantino/id1627069896" target="_blank" class="hover:text-[--custom-orange]">The Video Archives</a></li>
+                  <li class="item-entry"><a href="https://podcasts.apple.com/us/podcast/what-really-matters-with-walter-russell-mead/id1695205478" target="_blank" class="hover:text-[--custom-orange]">What Really Matters</a></li>
+                </ol>
+              </div>
+              
+              <!-- Publications List (Hidden by default) -->
+              <div id="publications-container" class="content-list hidden">
+                <!-- Match the exact same structure as the main page -->
+                <h2 class="page-title">Publications</h2>
+                <div class="nav-container">
+                  <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://culturaltutor.com/areopagus" target="_blank" class="hover:text-[--custom-orange]">Areopagus</a></li>
+                  <li class="item-entry"><a href="https://www.aldaily.com/" target="_blank" class="hover:text-[--custom-orange]">Arts & Letters Daily</a></li>
+                  <li class="item-entry"><a href="https://press.asimov.com/" target="_blank" class="hover:text-[--custom-orange]">Asimov Press</a></li>
+                  <li class="item-entry"><a href="https://www.astralcodexten.com/" target="_blank" class="hover:text-[--custom-orange]">Astral Codex Ten</a></li>
+                  <li class="item-entry"><a href="https://austinvernon.site/" target="_blank" class="hover:text-[--custom-orange]">Austin Vernon</a></li>
+                  <li class="item-entry"><a href="https://www.blackbirdspyplane.com/" target="_blank" class="hover:text-[--custom-orange]">Blackbird Spyplane</a></li>
+                  <li class="item-entry"><a href="https://thebrowser.com/" target="_blank" class="hover:text-[--custom-orange]">The Browser</a></li>
+                  <li class="item-entry"><a href="https://www.commonreader.co.uk/" target="_blank" class="hover:text-[--custom-orange]">The Common Reader</a></li>
+                  <li class="item-entry"><a href="https://www.thediff.co/" target="_blank" class="hover:text-[--custom-orange]">The Diff</a></li>
+                  <li class="item-entry"><a href="https://dynomight.net/" target="_blank" class="hover:text-[--custom-orange]">Dynomight</a></li>
+                  <li class="item-entry"><a href="https://www.edge.org/" target="_blank" class="hover:text-[--custom-orange]">Edge</a></li>
+                  <li class="item-entry"><a href="https://engelsbergideas.com/" target="_blank" class="hover:text-[--custom-orange]">Engelsberg Ideas</a></li>
+                  <li class="item-entry"><a href="https://www.henrikkarlsson.xyz/" target="_blank" class="hover:text-[--custom-orange]">Escaping Flatland</a></li>
+                  <li class="item-entry"><a href="https://www.generalist.com/" target="_blank" class="hover:text-[--custom-orange]">The Generalist</a></li>
+                  <li class="item-entry"><a href="https://gwern.net/" target="_blank" class="hover:text-[--custom-orange]">Gwern</a></li>
+                  <li class="item-entry"><a href="https://www.lesswrong.com/" target="_blank" class="hover:text-[--custom-orange]">LessWrong</a></li>
+                  <li class="item-entry"><a href="https://marginalrevolution.com/" target="_blank" class="hover:text-[--custom-orange]">Marginal Revolution</a></li>
+                  <li class="item-entry"><a href="https://nosetgauge.substack.com/" target="_blank" class="hover:text-[--custom-orange]">No Set Gauge</a></li>
+                  <li class="item-entry"><a href="https://www.overcomingbias.com/" target="_blank" class="hover:text-[--custom-orange]">Overcoming Bias</a></li>
+                  <li class="item-entry"><a href="https://www.palladiummag.com/" target="_blank" class="hover:text-[--custom-orange]">Palladium</a></li>
+                  <li class="item-entry"><a href="https://scholars-stage.org/" target="_blank" class="hover:text-[--custom-orange]">Scholars Stage</a></li>
+                  <li class="item-entry"><a href="https://www.secretorum.life/" target="_blank" class="hover:text-[--custom-orange]">Secretorum</a></li>
+                  <li class="item-entry"><a href="https://www.sherryning.com/" target="_blank" class="hover:text-[--custom-orange]">Sherry Ning</a></li>
+                  <li class="item-entry"><a href="https://press.stripe.com/" target="_blank" class="hover:text-[--custom-orange]">Stripe Press</a></li>
+                  <li class="item-entry"><a href="https://www.wsj.com/" target="_blank" class="hover:text-[--custom-orange]">The Wall Street Journal</a></li>
+                </ol>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      function updateDayCount() {
+        const startDate = new Date(2000, 8, 6); // September 6, 2000
+        const currentDate = new Date();
+        const timeDiff = currentDate - startDate;
+        const daysPassed = timeDiff / (1000 * 60 * 60 * 24);
+        document.getElementById("dynamic-day").textContent =
+          daysPassed.toLocaleString(undefined, {
+            minimumFractionDigits: 8,
+            maximumFractionDigits: 8,
+          });
+      }
+      setInterval(updateDayCount, 100); // Update every 100ms
+      updateDayCount();
+      
+      // Function to show specific content and hide categories
+      function showContent(containerId) {
+        // Hide all content containers
+        document.querySelectorAll('.content-list').forEach(container => {
+          container.classList.add('hidden');
+        });
+        
+        // Hide categories and header
+        document.getElementById("categories-container").classList.add("hidden");
+        document.getElementById("page-header").classList.add("hidden");
+        
+        // Show the selected content
+        document.getElementById(containerId).classList.remove("hidden");
+      }
+      
+      // Function to show categories and hide all content lists
+      function showCategories() {
+        // Hide all content containers
+        document.querySelectorAll('.content-list').forEach(container => {
+          container.classList.add('hidden');
+        });
+        
+        // Show categories and header
+        document.getElementById("page-header").classList.remove("hidden");
+        document.getElementById("categories-container").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
