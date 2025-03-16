@@ -29,6 +29,9 @@
         .article-date {
           @apply text-gray-500 text-sm ml-2;
         }
+        #discernment-content p {
+          @apply mb-4;
+        }
       }
     </style>
   </head>
@@ -36,7 +39,7 @@
     <div class="flex h-screen">
       <div class="flex flex-col w-full p-[25px] min-h-fit">
         <div class="flex-grow flex items-start justify-between min-h-fit">
-          <div class="">
+          <div class="w-full">
             <!-- Main Content Area -->
             <div id="main-content">
               <!-- Writing header and Back to Home link -->
@@ -53,7 +56,7 @@
               <div id="articles-container" class="articles-list">
                 <ul>
                   <li class="article-item">
-                    <span class="article-title">Discernment at the tail</span>
+                    <span class="article-title" onclick="showArticle('discernment-article')">Discernment at the Tail</span>
                     <span class="article-date">Day 8,951</span>
                   </li>
                   <li class="article-item">
@@ -119,9 +122,99 @@
                 </ul>
               </div>
             </div>
+            
+            <!-- Article Content (Initially Hidden) -->
+            <div id="discernment-article" class="hidden">
+              <!-- Page header section with back link -->
+              <div id="article-header">
+                <div class="mb-6">
+                  <h2 class="text-3xl inline-block mr-3">Discernment at the Tail</h2>
+                  <span class="text-gray-500 text-sm align-middle">Day 8,951</span>
+                </div>
+                
+                <!-- Back to Writing link - positioned like other back links -->
+                <div class="mb-8">
+                  <a href="#" onclick="showArticlesList(); return false;" class="text-[--custom-orange] hover:underline">&larr; Back to Writing</a>
+                </div>
+              </div>
+              
+              <!-- Article content -->
+              <div id="discernment-content" class="max-w-3xl">
+                <p>To be able to distinguish the truly extraordinary from the merely great — that is, to be able to separate the 99.99th percentile from the 99.9th — is to have <em>discernment at the tail</em>. When evaluating the talent of young people, the best way to discern at the tail is to assess their first and second derivatives.</p>
+                
+                <p>Their first derivative is how quickly they're improving. The biggest sign of a high slope in a young person is evidence of <em>magic</em>. Magic is something they've done in their past that no matter how high your bar for talent is, you simply can't understand how they were able to do it. That may be a product they engineered or a creative work they produced whose quality far exceeds their age. Or it could look like a valuable personal relationship or network they built without familial connections. Many talented young people have notable accomplishments, but few have produced magic.</p>
+                
+                <p>The second derivative is how their slope will change over time. If the first derivative is about capability, the second is about desire. Their second derivative is determined by their scale of ambition, and <a href="https://jamesclear.com/quotes/take-a-simple-idea-and-take-it-seriously-charlie-munger#:~:text=%22Take%20a%20simple%20idea%20and,%22%E2%80%94Charlie%20Munger%20%2D%20James%20Clear" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">the earnestness</a> with which they pursue it. Often, talented people quickly hit diminishing returns as they age because they adopt priorities or responsibilities other than developing their talent further; they decelerate. Like the <a href="https://en.wikipedia.org/wiki/Peter_principle" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">Peter Principle</a>, people rise no higher than their level of ambition. Over time, those with lower slopes but high second derivatives <a href="https://www.goodreads.com/quotes/1222593-i-constantly-see-people-rise-in-life-who-are-not" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">surpass them</a>.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <script>
+      function updateDayCount() {
+        const startDate = new Date(2000, 8, 6); // September 6, 2000
+        const currentDate = new Date();
+        const timeDiff = currentDate - startDate;
+        const daysPassed = timeDiff / (1000 * 60 * 60 * 24);
+        document.getElementById("dynamic-day").textContent =
+          daysPassed.toLocaleString(undefined, {
+            minimumFractionDigits: 8,
+            maximumFractionDigits: 8,
+          });
+      }
+      
+      // Show article content and hide articles list
+      function showArticle(articleId) {
+        // Hide the main content
+        document.getElementById("main-content").classList.add("hidden");
+        
+        // Show the article content
+        document.getElementById(articleId).classList.remove("hidden");
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+        
+        // Update URL without reloading (so back button works properly)
+        history.pushState({page: articleId}, "", "#" + articleId);
+      }
+      
+      // Show articles list and hide article content
+      function showArticlesList() {
+        // Hide all article content
+        document.querySelectorAll('[id$="-article"]').forEach(element => {
+          element.classList.add("hidden");
+        });
+        
+        // Show the main content
+        document.getElementById("main-content").classList.remove("hidden");
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+        
+        // Update URL without reloading
+        history.pushState({page: "main"}, "", window.location.pathname);
+      }
+      
+      // Handle browser back/forward buttons
+      window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.page && event.state.page !== "main") {
+          showArticle(event.state.page);
+        } else {
+          showArticlesList();
+        }
+      });
+      
+      // Check URL hash on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.location.hash) {
+          const articleId = window.location.hash.substring(1);
+          if (document.getElementById(articleId)) {
+            showArticle(articleId);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
