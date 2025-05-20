@@ -33,15 +33,45 @@
         .body-text {
           @apply text-sm; /* Added class for smaller body text */
         }
+        .micro-image {
+          @apply w-full h-full object-cover object-top transition-all duration-300;
+        }
+        .micro-image-books {
+          @apply w-full h-full object-cover transition-all duration-300;
+          object-position: center 20%; /* Adjusted to crop slightly more from the top */
+        }
+        .square-image {
+          @apply w-full h-full object-cover transition-all duration-300;
+        }
+        .center-crop {
+          @apply w-full h-full object-cover object-center transition-all duration-300;
+        }
+        
+        /* Hover effects for grid items */
+        .image-cell {
+          @apply relative overflow-hidden rounded shadow-sm transition-all duration-300 z-10;
+        }
+        
+        /* Grid container with hover state management */
+        .image-grid:hover .image-cell:not(:hover) img {
+          @apply opacity-70; /* Less fading of other images (was 40%) */
+        }
+        
+        /* Individual cell hover effects */
+        .image-cell:hover {
+          @apply z-20 scale-125 shadow-md; /* Reduced scale (was 150%) and shadow */
+        }
+        
+        .image-cell:hover img {
+          @apply object-contain !important; /* Override object-fit on hover to show full image */
+        }
       }
     </style>
   </head>
   <body>
-    <div class="flex h-screen">
-      <!-- Left Half -->
-      <div
-        class="flex flex-col w-1/2 p-[25px] min-h-fit min-w-min"
-      >
+    <div class="flex flex-col min-h-screen">
+      <!-- Main Content -->
+      <div class="p-[25px] w-full md:w-1/2 min-w-min">
         <!-- Header section with title and subtitle -->
         <div class="mb-8">
           <h1 class="text-5xl mb-2"><a href="https://www.nmatthew.com">Nick Matthew</a></h1>
@@ -53,11 +83,149 @@
           </div>
         </div>
         
-        <!-- Images Row - Removed second image, kept only profile photo -->
-        <div class="mb-6">
-          <!-- Profile Image -->
-          <div>
+        <!-- Headshot and Image Grid Row -->
+        <div class="flex mb-6 space-x-4">
+          <!-- Headshot -->
+          <div class="w-48">
             <img src="/headshot.jpeg" alt="Nick Matthew" class="w-48 h-48 object-cover rounded-lg shadow-md" />
+          </div>
+          
+          <!-- Micro Image Grid - Same size as headshot -->
+          <div class="w-48 h-48 grid grid-cols-5 grid-rows-5 gap-0.5 image-grid">
+            <!-- Row 1: Books - with adjusted cropping -->
+            <div class="image-cell">
+              <a href="https://www.goodreads.com/book/show/14706.Faust_First_Part" target="_blank" title="Faust">
+                <img src="./images/faust.jpg" alt="Book 1" class="micro-image-books" title="Faust">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://www.goodreads.com/book/show/86524.The_Path_to_Power" target="_blank" title="The Path to Power">
+                <img src="./images/path_to_power.jpg" alt="Book 2" class="micro-image-books" title="The Path to Power">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://www.goodreads.com/book/show/9717.The_Unbearable_Lightness_of_Being" target="_blank" title="The Unbearable Lightness of Being">
+                <img src="./images/lightness_of_being.jpg" alt="Book 3" class="micro-image-books" title="The Unbearable Lightness of Being">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://www.goodreads.com/book/show/13470.Think_on_These_Things" target="_blank" title="Think on These Things">
+                <img src="./images/think_on_these_things.jpg" alt="Book 4" class="micro-image-books" title="Think on These Things">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://www.goodreads.com/book/show/679913.Persecution_and_the_Art_of_Writing" target="_blank" title="Persecution and the Art of Writing">
+                <img src="./images/art_of_writing.jpg" alt="Book 5" class="micro-image-books" title="Persecution and the Art of Writing">
+              </a>
+            </div>
+            
+            <!-- Row 2: Podcasts -->
+            <div class="image-cell">
+              <a href="https://open.spotify.com/show/63AWQmsSnFNFHUqnRAOFtD" target="_blank" title="The Drive Podcast">
+                <img src="./images/drive_podcast.jpg" alt="Podcast 1" class="square-image" title="The Drive Podcast">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/show/59YkrYwjAgiKAVMNGWPaLE" target="_blank" title="Undertone Podcast">
+                <img src="./images/undertone_podcast.jpeg" alt="Podcast 2" class="square-image" title="Undertone Podcast">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/show/0ofXAdFIQQRsCYj9754UFx" target="_blank" title="Stuff You Should Know">
+                <img src="./images/stuff_you_should_know.webp" alt="Podcast 3" class="square-image" title="Stuff You Should Know">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/show/0XmfKM72Re8JRl2GHtS28w" target="_blank" title="Pioneer Podcast">
+                <img src="./images/pioneer_podcast.jpg" alt="Podcast 4" class="square-image" title="Pioneer Podcast">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/show/5FEwz047DHuxiJnhq3Qjkg" target="_blank" title="SSC Podcast">
+                <img src="./images/ssc_podcast.png" alt="Podcast 5" class="square-image" title="SSC Podcast">
+              </a>
+            </div>
+            
+            <!-- Row 3: Artworks -->
+            <div class="image-cell">
+              <a href="https://artsandculture.google.com/asset/sukiya-riverbank-in-the-eastern-capital-t%C5%8Dto-sukiya-kaigan-utagawa-hiroshige-japanese-1797-1858/jgHXtuQhMjF3PA" target="_blank" title="Hiroshige">
+                <img src="./images/hiroshige.webp" alt="Artwork 1" class="square-image" title="Hiroshige">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://www.wikiart.org/en/rembrandt/christ-in-the-storm-1633" target="_blank" title="Storm by Rembrandt">
+                <img src="./images/storm_rembrandt.jpg" alt="Artwork 2" class="square-image" title="Storm by Rembrandt">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://www.wikiart.org/en/hilma-af-klint/the-swan-no-17-1915-0" target="_blank" title="Swan">
+                <img src="./images/swan.jpg" alt="Artwork 3" class="square-image" title="Swan">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://artsandculture.google.com/asset/quinces-lemons-pears-and-grapes-vincent-van-gogh/LwFDYT7ka4VUYg" target="_blank" title="Lemons and Pears">
+                <img src="./images/lemons_pears.jpg" alt="Artwork 4" class="square-image" title="Lemons and Pears">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://artsandculture.google.com/asset/ornamental-panel-%E2%80%9Cmount-fuji%E2%80%9D-kawamoto-masukichi/jgFk-2nkvvnpyg" target="_blank" title="Mount Fuji">
+                <img src="./images/mount_fuji.jpeg" alt="Artwork 5" class="square-image" title="Mount Fuji">
+              </a>
+            </div>
+            
+            <!-- Row 4: Albums -->
+            <div class="image-cell">
+              <a href="https://open.spotify.com/album/5kBtLULy6vMwjFRSSEEIjP" target="_blank" title="Goldberg Variations">
+                <img src="./images/goldberg.jpg" alt="Album 1" class="square-image" title="Goldberg Variations">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/album/33ZqJmmqFE8Z7Ak1Lxbnfb" target="_blank" title="The 1975">
+                <img src="./images/1975.png" alt="Album 2" class="square-image" title="The 1975">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/album/5n1GSzC1Reao29ScnpLYqp" target="_blank" title="Kodak Black">
+                <img src="./images/kodak.png" alt="Album 3" class="square-image" title="Kodak Black">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/album/1WBZyULtlANBKed7Zf9cDP" target="_blank" title="Tupac">
+                <img src="./images/tupac.jpg" alt="Album 4" class="square-image" title="Tupac">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://open.spotify.com/album/10WzRaNWnFUQNrW2FpqQSQ" target="_blank" title="Salvia">
+                <img src="./images/salvia.jpg" alt="Album 5" class="square-image" title="Salvia">
+              </a>
+            </div>
+            
+            <!-- Row 5: Movies - prioritize top of movie posters, except "blue" which is centered -->
+            <div class="image-cell">
+              <a href="https://letterboxd.com/film/mr-smith-goes-to-washington/" target="_blank" title="Mr. Smith Goes to Washington">
+                <img src="./images/mr_smith.jpg" alt="Movie 1" class="micro-image" title="Mr. Smith Goes to Washington">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://letterboxd.com/film/metropolis/" target="_blank" title="Metropolis">
+                <img src="./images/metropolis.jpg" alt="Movie 2" class="micro-image" title="Metropolis">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://letterboxd.com/film/amelie/" target="_blank" title="Amélie">
+                <img src="./images/amelie.jpg" alt="Movie 3" class="micro-image" title="Amélie">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://letterboxd.com/film/life-of-brian/" target="_blank" title="Life of Brian">
+                <img src="./images/brian.jpg" alt="Movie 4" class="micro-image" title="Life of Brian">
+              </a>
+            </div>
+            <div class="image-cell">
+              <a href="https://letterboxd.com/film/three-colours-blue/" target="_blank" title="Three Colors: Blue">
+                <img src="./images/blue.jpg" alt="Movie 5" class="center-crop" title="Three Colors: Blue">
+              </a>
+            </div>
           </div>
         </div>
         
@@ -67,7 +235,7 @@
             In essence, I'm interested in seeing clearly.
           </p>
           <p class="mb-4 body-text">
-            Recent interests include Peking Opera, Bank 10-Ks, and Manicheanism. Here are some other <a href="likes.html" class="text-[--custom-orange] hover:underline">things I like</a>, and here is my <a href="writing.html" class="text-[--custom-orange] hover:underline">writing</a>.
+            Recent interests include Peking Opera, Bank 10-Ks, and Manichaeism. Here are some other <a href="likes.html" class="text-[--custom-orange] hover:underline">things I like</a>, and here is my <a href="writing.html" class="text-[--custom-orange] hover:underline">writing</a>.
           </p>
           <p class="mb-4 body-text">
             I invest at <a href="https://www.standardcrypto.vc/" target="_blank" class="text-[--custom-orange] hover:underline">Standard Crypto</a>. Previously, I invested at <a href="https://www.figmentcapital.io/" target="_blank" class="text-[--custom-orange] hover:underline">Figment Capital</a> and studied math and machine learning at UNC.
