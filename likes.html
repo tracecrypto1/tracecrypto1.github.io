@@ -66,6 +66,7 @@
                   <li class="category-item" onclick="showContent('films-container')">Films</li>
                   <li class="category-item" onclick="showContent('music-container')">Music</li>
                   <li class="category-item" onclick="showContent('organizations-container')">Organizations</li>
+                  <li class="category-item" onclick="showContent('photography-container')">Photography</li>
                   <li class="category-item" onclick="showContent('places-container')">Places</li>
                   <li class="category-item" onclick="showContent('podcasts-container')">Podcasts</li>
                   <li class="category-item" onclick="showContent('publications-container')">Publications</li>
@@ -80,7 +81,6 @@
                   <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
                 </div>
                 <ol class="space-y-2">
-                  <li class="item-entry"><a href="https://catalog.archives.gov/id/533478" target="_blank" class="hover:text-[--custom-orange]">Announcement of the Armistice</a></li>
                   <li class="item-entry"><a href="https://www.nga.gov/collection/art-object-page.63272.html" target="_blank" class="hover:text-[--custom-orange]">Another World</a></li>
                   <li class="item-entry"><a href="https://artsandculture.google.com/asset/colossal-head-fragment-of-an-imago-clipeata-alexander-the-great-unknown/0AHH4cUdFIl1Jw" target="_blank" class="hover:text-[--custom-orange]">Colossal head fragment of Alexander the Great</a></li>
                   <li class="item-entry"><a href="https://artsandculture.google.com/asset/convergence-jackson-pollock/rgFoAwFLiZvHqQ" target="_blank" class="hover:text-[--custom-orange]">Convergence</a></li>
@@ -99,6 +99,7 @@
                   <li class="item-entry"><a href="https://artsandculture.google.com/asset/the-mysterious-archaeologists/OQEIaS7hTcSG5w" target="_blank" class="hover:text-[--custom-orange]">The Mysterious Archaeologists</a></li>
                   <li class="item-entry"><a href="https://www.wikiart.org/en/fernand-khnopff/my-heart-cries-for-the-past-1889" target="_blank" class="hover:text-[--custom-orange]">My Heart Cries for the Past</a></li>
                   <li class="item-entry"><a href="https://artsandculture.google.com/asset/notre-dame-amrita-sher-gil/GAGZ5YLrvr2wFg" target="_blank" class="hover:text-[--custom-orange]">Notre Dame</a></li>
+                  <li class="item-entry"><a href="https://www.moniquemeloche.com/artworks/13928-amy-sherald-planes-rockets-and-the-spaces-in-between.-2018/" target="_blank" class="hover:text-[--custom-orange]">Planes, Rockets, and the Spaces In-between</a></li>
                   <li class="item-entry"><a href="https://artsandculture.google.com/asset/portrait-of-adolfo-best-maugard/jQF-X5pR3Xdxpw" target="_blank" class="hover:text-[--custom-orange]">Portrait of Adolfo Best Maugard</a></li>
                   <li class="item-entry"><a href="https://www.metmuseum.org/art/collection/search/313759" target="_blank" class="hover:text-[--custom-orange]">Ram Mask</a></li>
                   <li class="item-entry"><a href="https://www.wikiart.org/en/limbourg-brothers/september" target="_blank" class="hover:text-[--custom-orange]">September</a></li>
@@ -358,6 +359,42 @@
                     </ol>
                 </div>
 
+              <!-- Places List (Hidden by default) -->
+                <div id="photography-container" class="content-list hidden">
+                <!-- Match the exact same structure as the main page -->
+                  <h2 class="page-title">Photography</h2>
+                  <div class="nav-container">
+                    <span class="back-link" onclick="showCategories()">&larr; Back to Lists</span>
+                  </div>
+                <ol class="space-y-2">
+                  <li class="item-entry"><a href="https://www.andreasgursky.com/en" target="_blank" class="hover:text-[--custom-orange]">Andreas Gursky</a></li>
+                  <li class="item-entry"><a href="https://catalog.archives.gov/id/533478" target="_blank" class="hover:text-[--custom-orange]">Announcement of the Armistice</a></li>
+                  <li class="item-entry"><a href="https://arthurtress.com/wp-content/gallery/shadow/794.jpg" target="_blank" class="hover:text-[--custom-orange]">Arthur Tress - Shadow</a></li>
+                  <li class="item-entry"><a href="https://images.squarespace-cdn.com/content/v1/50f8512ae4b07aa42ac23794/1701972973674-SDSIEYY0H7LEN6OGSLN5/Cig_Harvey_Clematis%28EmilyClutching%29_011.jpg?format=2500w" target="_blank" class="hover:text-[--custom-orange]">Cig Harvey - Clematis</a></li>
+                  <li class="item-entry"><a href="https://www.edward-weston.com/cole-weston?itemId=f1767jb9bt6cquf1vk6rhx8sorzj08" target="_blank" class="hover:text-[--custom-orange]">Edward Weston - Combine</a></li>
+                  <li class="item-entry"><a href="https://www.elliotterwitt.com/snaps?pgid=kcw7gc7a-acb396b5-81ba-4081-906c-05e36b0576fc" target="_blank" class="hover:text-[--custom-orange]">Elliot Erwitt - NYC</a></li>
+                  <li class="item-entry"><a href="https://www.guybourdin.org/artworks?itemId=ye1nvybei4x85q2sv2bwl27behucub" target="_blank" class="hover:text-[--custom-orange]">Guy Bourdin - Umbrella</a></li>
+                  <li class="item-entry"><a href="https://freight.cargo.site/t/original/i/26ac003eca90e286b48a48558f20504d3e24b5c95239ce07a6940c92d4697abc/220319_Sten_NewYorker_SOH_I34_01.jpg" target="_blank" class="hover:text-[--custom-orange]">Heather Sten - Sten New Yorker</a></li>
+                  <li class="item-entry"><a href="https://www.google.com/search?sca_esv=2733a3999a04fae8&q=helmut+newton+gun+for+hire&udm=2&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIeioyp3OhN11EY0n5qfq-zEMZldv_eRjZ2XLYc5GnVnMEIxC4WQfoNDH7FwchyAayyomVtyMIlwCjX48LT0TrXSNU5mLhW4DIlZIt3-gwG8mMeXC-Y0JFzx5GBuU59za0o5XLXRovSVas40d3y4gTUxobLZ8-C-h3aNfCXmcENPvCZqzMdA&sa=X&ved=2ahUKEwj_kOrF9_mNAxUfJjQIHaUyFt0QtKgLegQIFhAB&biw=1662&bih=906&dpr=2#vhid=nQRzdkNJs4AfuM&vssid=mosaic" target="_blank" class="hover:text-[--custom-orange]">Helmut Newton - Gun for Hire</a></li>
+                  <li class="item-entry"><a href="https://www.irenekung.com/wp-content/uploads/2020/03/IK_PH_130_1.001.L.jpg" target="_blank" class="hover:text-[--custom-orange]">Irene Kung - Willow Tree</a></li>
+                  <li class="item-entry"><a href="https://images.squarespace-cdn.com/content/v1/58cfe9e91b10e37dbd7bc584/1490992922640-KU3KGO69BD6MO7CEZ5ZE/woman_in_feather_hat_b_new_york_1991.jpg?format=1500w" target="_blank" class="hover:text-[--custom-orange]">Irving Penn - Woman in Feather Hat</a></li>
+                  <li class="item-entry"><a href="https://www.icp.org/browse/archive/objects/untitled-3278" target="_blank" class="hover:text-[--custom-orange]">Les Krims - Untitled</a></li>
+                  <li class="item-entry"><a href="https://www.moma.org/collection/works/101659" target="_blank" class="hover:text-[--custom-orange]">Nan and Brian in Bed - Nan Goldin</a></li>
+                  <li class="item-entry"><a href="https://pguilmoth.com/mustquit/5zoii4tolz17c09y5r8xg4u17354l2" target="_blank" class="hover:text-[--custom-orange]">Pia Gilmoth - Must Quit</a></li>
+                  <li class="item-entry"><a href="https://www.laurencemillergallery.com/artists/ray-metzker?view=slider#41" target="_blank" class="hover:text-[--custom-orange]">Ray Metzker - Philadelphia</a></li>
+                  <li class="item-entry"><a href="https://images.squarespace-cdn.com/content/v1/5575b396e4b017c5045ccbf6/1486060698594-0468PHXI9YIFVO6POV55/Santa+Monica+Beach+%234%2C+September+30%2C+1963+100.6814.jpg?format=1500w" target="_blank" class="hover:text-[--custom-orange]">Richard Avedon - Santa Monica Beach</a></li>
+                  <li class="item-entry"><a href="https://rinkokawauchi.com/en/wp-content/uploads/sites/2/2017/12/EE51-1200x1200.jpg" target="_blank" class="hover:text-[--custom-orange]">Rinko Kawauchi - The Eyes The Ears</a></li>
+                  <li class="item-entry"><a href="https://www.ruipalha.com/Galleries/Recent-work/i-GbttDnL/A" target="_blank" class="hover:text-[--custom-orange]">Rui Palha - Black and White</a></li>
+                  <li class="item-entry"><a href="https://samabell.com/" target="_blank" class="hover:text-[--custom-orange]">Sam Abell</a></li>
+                  <li class="item-entry"><a href="https://www.saulleiterfoundation.org/black-and-white?itemId=i5szvthdz4u08ub42blj4rtujuuv5l" target="_blank" class="hover:text-[--custom-orange]">Saul Leiter - Black and White</a></li>
+                  <li class="item-entry"><a href="https://www.stephenshore.net/m/uncommon.php" target="_blank" class="hover:text-[--custom-orange]">Stephen Shore - Uncommon</a></li>
+                  <li class="item-entry"><a href="https://stephenwilkes.com/" target="_blank" class="hover:text-[--custom-orange]">Stephen Wilkes</a></li>
+                  <li class="item-entry"><a href="https://www.jessicachouphotography.com/m6tq07nz3cn4s52rszbw0vnw848rro" target="_blank" class="hover:text-[--custom-orange]">Taika Waititi for WIRED</a></li>
+                  <li class="item-entry"><a href="https://images.squarespace-cdn.com/content/v1/67afcefc652970764b44230f/20548023-f034-454d-9632-b0451eff4682/SPAIN+SMALL-17.jpg?format=2500w" target="_blank" class="hover:text-[--custom-orange]">Taylor Pendleton - Andalucía</a></li>
+                  <li class="item-entry"><a href="https://www.valentina-murabito.com/nausicaa-studio-n-1/" target="_blank" class="hover:text-[--custom-orange]">Valentina Murabito - Nausicaa</a></li>
+                </ol>
+              </div>
+
                <!-- Places List (Hidden by default) -->
                <div id="places-container" class="content-list hidden">
                 <!-- Match the exact same structure as the main page -->
@@ -392,6 +429,7 @@
                   <li class="item-entry"><a href="https://www.nps.gov/zion/index.htm" target="_blank" class="hover:text-[--custom-orange]">Zion National Park, Utah</a></li>
                 </ol>
               </div>
+
               <!-- Podcasts List (Hidden by default) -->
               <div id="podcasts-container" class="content-list hidden">
                 <!-- Match the exact same structure as the main page -->
