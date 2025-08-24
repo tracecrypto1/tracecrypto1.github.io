@@ -29,10 +29,7 @@
         .article-date {
           @apply text-gray-500 text-sm ml-2;
         }
-        #discernment-content p {
-          @apply mb-4;
-        }
-        #business-beauty-content p {
+        #content p {
           @apply mb-4;
         }
       }
@@ -58,6 +55,14 @@
               <!-- Articles List -->
               <div id="articles-container" class="articles-list">
                 <ul>
+                  <li class="article-item">
+                    <span class="article-title" onclick="showArticle('pace-layers-article')">Segmenting Pace Layers</span>
+                    <span class="article-date">Day 9,118</span>
+                  </li>
+                  <li class="article-item">
+                    <span class="article-title" onclick="showArticle('reference-class-article')">Managing Your Reference Class</span>
+                    <span class="article-date">Day 9,117</span>
+                  </li>
                   <li class="article-item">
                     <span class="article-title" onclick="showArticle('watching-film-article')">Watching Film</span>
                     <span class="article-date">Day 9,084</span>
@@ -135,6 +140,57 @@
             </div>
 
             <!-- Article Content (Initially Hidden) -->
+            <div id="pace-layers-article" class="hidden">
+              <!-- Page header section with back link -->
+              <div id="article-header">
+                <div class="mb-6">
+                  <h2 class="text-3xl inline-block mr-3">Segmenting Pace Layers</h2>
+                  <span class="text-gray-500 text-sm align-middle">Day 9,118</span>
+                </div>
+                
+                <!-- Back to Writing link - positioned like other back links -->
+                <div class="mb-8">
+                  <a href="#" onclick="showArticlesList(); return false;" class="text-[--custom-orange] hover:underline">&larr; Back to Writing</a>
+                </div>
+              </div>
+              
+              <!-- Article content -->
+              <div id="content" class="max-w-3xl">
+                <p>While religions can survive millennia and institutions flow <a href="https://www.goodreads.com/book/show/20435708-albion-s-seed" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">through the centuries</a>, TikTok trends last mere days. Different layers of culture change at <a href="https://jods.mitpress.mit.edu/pub/issue3-brand/release/2" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">different paces</a>.</p>
+                <p>In trying to <a href="https://marginalrevolution.com/marginalrevolution/2018/12/deconstructing-cultural-codes.html" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">understand any new culture</a>, one of the greatest challenges is to segment its pace layers — to see the culture as a spectrograph sees light. Only then do we truly understand it.</p>
+              </div>
+            </div>
+
+            <!-- Article Content (Initially Hidden) -->
+            <div id="reference-class-article" class="hidden">
+              <!-- Page header section with back link -->
+              <div id="article-header">
+                <div class="mb-6">
+                  <h2 class="text-3xl inline-block mr-3">Managing Your Reference Class</h2>
+                  <span class="text-gray-500 text-sm align-middle">Day 9,117</span>
+                </div>
+                
+                <!-- Back to Writing link - positioned like other back links -->
+                <div class="mb-8">
+                  <a href="#" onclick="showArticlesList(); return false;" class="text-[--custom-orange] hover:underline">&larr; Back to Writing</a>
+                </div>
+              </div>
+              
+              <!-- Article content -->
+              <div id="content" class="max-w-3xl">
+                <p>Comparison is the <a href="https://www.goodreads.com/quotes/6471614-comparison-is-the-thief-of-joy" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">thief of joy</a> only if we make unwise comparisons. One of the most surefire paths to unhappiness is to, upon having rolled a 9 on a 10 sided die, look enviously at the person who rolled a 10.</p>
+                
+                <p>The world will try to tell you who to compare yourself to, pointing at those who have what you want: the instagram model, the socialite, the prodigy.</p>
+                
+                <p>But if we invert this process and focus instead on people we anti-envy, we can create a very different reference class. One where the deck is stacked wildly in our favor.</p>
+                
+                <p>When one has deeply internalized the fact that at this very moment they are not on the <a href="https://letterboxd.com/film/saving-private-ryan/" target="_blank" class="text-gray-600 underline decoration-gray-400 hover:text-[--custom-orange] hover:decoration-[--custom-orange]">front lines of D-Day</a>, nor having their village raided by the Mongols, nor on the streets of Medieval Florence during the Bubonic Plague, they hold a very different perspective.</p>
+                
+                <p>With the right reference class, it's impossible to not wake up every morning radiating gratitude. We simply need the discipline to protect it.</p>
+              </div>
+            </div>
+
+            <!-- Article Content (Initially Hidden) -->
             <div id="watching-film-article" class="hidden">
               <!-- Page header section with back link -->
               <div id="article-header">
@@ -150,9 +206,10 @@
               </div>
               
               <!-- Article content -->
-              <div id="discernment-content" class="max-w-3xl">
-                <p>In 2025, I made a massive time investment into film, watching 90 in the first 180 days. These films span across time and space, from mid-century Italian neorealism to contemporary African arthouse.</p>
-                
+              <div id="content" class="max-w-3xl">
+                <p>In 2025, I made a massive time investment into film, watching 90 in the first 180 days. These films span across time and space, from mid-century Italian neorealism to contemporary African arthouse.
+                </p>
+
                 <p>There are 2 main benefits to watching film. The first is augmented perception. Noticing light, color, and composition. Seeing and hearing the little details in a person, environment, or situation. Appreciating the beauty in the world.</p>
                 
                 <p>The second is internalizing the human condition. Much of learning is about building tacit knowledge rather than rote memorization. The world runs on intuition and instinct, built by experience. While the essence of the human condition can be expressed in terms of specific feelings — love, suffering, envy, ambition — knowing of these feelings does not mean one has internalized their breadth and depth. They must be repeatedly experienced. Film is a way of experiencing life more widely, more quickly. Doing so allows one to build a deep, intuitive understanding of what it is to be human. This understanding helps one make wiser choices, leading to a more rich and fulfilling life.</p>
@@ -175,7 +232,7 @@
               </div>
               
               <!-- Article content -->
-              <div id="discernment-content" class="max-w-3xl">
+              <div id="content" class="max-w-3xl">
                 <p>To be able to distinguish the truly extraordinary from the merely great — that is, to be able to separate the 99.99th percentile from the 99.9th — is to have <em>discernment at the tail</em>. When evaluating the talent of young people, the best way to discern at the tail is to assess their first and second derivatives.</p>
                 
                 <p>Their first derivative is how quickly they're improving. The biggest sign of a high slope in a young person is evidence of <em>magic</em>. Magic is something they've done in their past that no matter how high your bar for talent is, you simply can't understand how they were able to do it. That may be a product they engineered or a creative work they produced whose quality far exceeds their age. Or it could look like a valuable personal relationship or network they built without familial connections. Many talented young people have notable accomplishments, but few have produced magic.</p>
@@ -199,7 +256,7 @@
                 </div>
               </div>
               
-              <div id="business-beauty-content" class="max-w-3xl">
+              <div id="content" class="max-w-3xl">
                 <p>I sometimes hear investors talk about how their investing is partly guided by beauty. But they rarely explain what they mean. What does a beautiful business look like, and why does beauty matter?</p>
                 
                 <p>It's easier to give an extensional definition of beauty than an intensional one. That is, it's easier to point at beauty than to define it. There's also no single measure of a business's beauty; there are many aspects to a business, each of which contribute to how beautiful it is.</p>
