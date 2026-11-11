@@ -7,17 +7,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
       :root {
-        --custom-orange: #95abab; /* Standard logo teal */
-        --custom-red: #5a6e6e;    /* deeper teal */
+        --custom-orange: #95abab;
+        --custom-red: #5a6e6e;
         font-family: "Georgia", serif;
       }
 
       body {
-        background-color: #0a0c0d; /* Standard logo near-black */
-        color: #d4d8d9;            /* off-white body text */
+        background-color: #0a0c0d;
+        color: #d4d8d9;
       }
 
-      /* Convert every image to black and white */
       img {
         filter: grayscale(100%);
       }
@@ -29,8 +28,18 @@
       <div class="p-[25px] w-full md:w-1/2 min-w-min">
         <!-- Headshot -->
         <div class="w-48 mb-6">
-          <img src="/headshot.jpeg" alt="Nick Matthew" class="w-48 rounded-lg shadow-md" />
+          <img
+            src="/headshot.jpeg"
+            alt="Nick Matthew"
+            class="w-48 rounded-lg shadow-md"
+          />
         </div>
+
+        <!-- Name -->
+        <h1 class="text-lg text-[#95abab] whitespace-nowrap">
+        Nicholas <span lang="he" dir="rtl">יוֹסֵף</span>
+        <span lang="ml">മത്തായ</span>
+        </h1>
       </div>
     </div>
   </body>
